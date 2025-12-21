@@ -28,10 +28,13 @@
     </style>
 </head>
 <body>
-<h1 th:text="${title}">PDF文档标题</h1>
+<h1 th:text="${title}">EKYC报告</h1>
 <p th:text="${content}">这是PDF文档的内容部分，由Thymeleaf模板引擎渲染。</p>
+<img th:src="@{../images/eep_sample.jpg}" alt="动态图片" style="width: 400px; height: auto;"/>
+<img th:src="${imagePath}" alt="动态图片" style="width: 400px; height: auto;"/>
+
 <div class="footer">
-    <p>© 2024 路条编程 - 保留所有权利。</p>
+    <p>©2025 EKYC - 保留所有权利。</p>
 </div>
 </body>
 </html>

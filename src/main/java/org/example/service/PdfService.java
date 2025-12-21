@@ -31,6 +31,9 @@ public class PdfService {
                 "这是PDF文档的主要内容："
                         + "“成功并不是终点，失败也不是终结，最重要的是继续前行的勇气。在人生的旅途中，我们会遇到许多挑战与挫折，这些都是成长的必经之路。每一次跌倒都是一次学习的机会，每一次失败都为成功铺设了基础。只要我们保持信念，不断努力，最终会到达梦想的彼岸。无论前方的路有多么坎坷，只要心怀希望，我们就有无限的可能性去改变自己的命运，实现心中的理想。”"
                         + "由Thymeleaf模板引擎渲染。");
+        //https://www.bijingdi.com/uploadfile/2022/1227/20221227185358683.jpg
+        context.setVariable("imagePath", "https://www.bijingdi.com/uploadfile/2022/1227/20221227185358683.jpg");
+
         return templateEngine.process("pdf_template", context);
     }
 
@@ -49,7 +52,7 @@ public class PdfService {
         // 创建ITextRenderer实例并注册字体（必须在渲染前注册）
         ITextRenderer renderer = new ITextRenderer();
         ITextFontResolver fontResolver = renderer.getFontResolver();
-        ClassPathResource fontResource = new ClassPathResource("fonts/SimSun.ttf");
+        ClassPathResource fontResource = new ClassPathResource("static/fonts/SimSun.ttf");
         fontResolver.addFont(fontResource.getFile().getAbsolutePath(), "Identity-H", true);
 
         // 为页眉页脚准备字体（优先使用 SimSun）
